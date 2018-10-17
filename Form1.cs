@@ -10,24 +10,35 @@ using System.Windows.Forms;
 
 namespace perseptron
 {
-    public partial class Form1 : Form
+    public partial class Perseptron : Form
     {
         double yeniW1, yeniW2;
-        public Form1()
+        public Perseptron()
         {
             InitializeComponent();
+        }  
+
+        private void btnHesapla_Click(object sender, EventArgs e)
+        {
+            tbsonuc.Text = "Perseptron Çözümü" + "\r\n";
+            Hesaplamalar();
         }
 
+        private void btnRandom_Click(object sender, EventArgs e)
+        {
+            RandomOlustur();
+        }
 
-        public void Hesaplamalar() {
+        public void Hesaplamalar()
+        {
             bool hesaplamaIslemiDurumu = true;
             yeniW1 = Convert.ToDouble(tbwx1.Text);
             yeniW2 = Convert.ToDouble(tbwx2.Text);
-            int ornek1Sonuc=0,ornek2Sonuc=0;
-            int iterasyon=1;
-            while (hesaplamaIslemiDurumu) 
+            int ornek1Sonuc = 0, ornek2Sonuc = 0;
+            int iterasyon = 1;
+            while (hesaplamaIslemiDurumu)
             {
-                tbsonuc.Text += "\r\n" + iterasyon.ToString()+".İterasyon "+"1.Örnek" ;
+                tbsonuc.Text += "\r\n" + iterasyon.ToString() + ".İterasyon " + "1.Örnek";
                 ornek1Sonuc = NetHesaplama(
                                 1, iterasyon, Convert.ToDouble(tbx11.Text), Convert.ToDouble(tbx12.Text),
                                 yeniW1, yeniW2,
@@ -45,14 +56,16 @@ namespace perseptron
                 {
                     hesaplamaIslemiDurumu = false;
                 }
-            }          
-            tbsonuc.Text += "\r\n"+"Öğrenme Sonunda ağırlıklar:" +"\r\n" + "w1= "+yeniW1.ToString()+ "\r\n"+"w2= " +yeniW2.ToString();
+            }
+            tbsonuc.Text += "\r\n" + "Öğrenme Sonunda ağırlıklar:" + "\r\n" + "w1= " + yeniW1.ToString() + "\r\n" + "w2= " + yeniW2.ToString();
         }
 
-        private void btnHesapla_Click(object sender, EventArgs e)
-        {
-            tbsonuc.Text = "Perseptron Çözümü" + "\r\n";
-            Hesaplamalar();
+        public void RandomOlustur() {
+            Random rastgele = new Random();
+            int w1 = rastgele.Next(-2, 2);
+            int w2 = rastgele.Next(-2, 2);
+            tbwx1.Text = w1.ToString();
+            tbwx2.Text = w2.ToString();
         }
 
         public int NetHesaplama(int ornekNo,int iterasyon,double x1, double x2, double w1,double w2, double ogrenme,double beklenen) {

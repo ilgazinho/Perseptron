@@ -1,6 +1,6 @@
 ﻿namespace perseptron
 {
-    partial class Form1
+    partial class Perseptron
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Perseptron));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
             this.tbb2 = new System.Windows.Forms.TextBox();
@@ -60,12 +60,14 @@
             this.tbx11 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnRandom = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.btnRandom);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.tbb2);
             this.panel1.Controls.Add(this.label17);
@@ -212,18 +214,18 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(241, 106);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(18, 13);
+            this.label9.Size = new System.Drawing.Size(21, 13);
             this.label9.TabIndex = 18;
-            this.label9.Text = "x2";
+            this.label9.Text = "w2";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(204, 106);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(18, 13);
+            this.label10.Size = new System.Drawing.Size(21, 13);
             this.label10.TabIndex = 17;
-            this.label10.Text = "x1";
+            this.label10.Text = "w1";
             // 
             // tbwx2
             // 
@@ -246,9 +248,9 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(109, 123);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(64, 13);
+            this.label11.Size = new System.Drawing.Size(70, 13);
             this.label11.TabIndex = 14;
-            this.label11.Text = "W =( x1,x2 )";
+            this.label11.Text = "W =( w1,w2 )";
             // 
             // label12
             // 
@@ -363,7 +365,17 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "1. Örnek";
             // 
-            // Form1
+            // btnRandom
+            // 
+            this.btnRandom.Location = new System.Drawing.Point(21, 266);
+            this.btnRandom.Name = "btnRandom";
+            this.btnRandom.Size = new System.Drawing.Size(117, 43);
+            this.btnRandom.TabIndex = 1;
+            this.btnRandom.Text = "Ağırlık Değiştir";
+            this.btnRandom.UseVisualStyleBackColor = true;
+            this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
+            // 
+            // Perseptron
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -374,7 +386,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "Perseptron";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Perseptron Örneği";
             this.panel1.ResumeLayout(false);
@@ -417,6 +429,7 @@
         private System.Windows.Forms.TextBox tbb2;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox tbb1;
+        private System.Windows.Forms.Button btnRandom;
     }
 }
 
